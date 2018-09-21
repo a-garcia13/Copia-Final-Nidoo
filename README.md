@@ -2,7 +2,7 @@
 
 Este proyecto contiene la información relacionada con el proyecto del curso de maestría MISO4206 en el cual se plantea una arquitectura de software ágil para la aplicación Nidoo.
 
-En la [wiki](https://github.com/glpinto10/nidoo-g6/wiki) del repositorio se encuentra toda la información relevante. 
+En la [wiki](https://github.com/MISO-4206/201820-Repo-Grupo-06/wiki) del repositorio se encuentra toda la información relevante. 
 
 ## Integrantes - Grupo 6
 
