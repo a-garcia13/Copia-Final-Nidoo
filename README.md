@@ -17,3 +17,18 @@ En la [wiki](https://github.com/MISO-4206/201820-Repo-Grupo-06/wiki) del reposit
 
 ![Architecture](images/architecture.jpg)
 
+
+### Despliegue de la aplicación:
+
+Se deben seguir los siguientes pasos para desplegar la aplicación:
+
+-  Crear la colección Parqueadero en DynamoDB con los siguientes atributos y llaves.
+
+![Dynamo](images/ParqueaderoDynamo.png)
+
+CoordenadaX: PartitionKey
+CoordenadaY: SortKey
+
+-  Crear las funciones lambda, una función por cada manejador definido en la clase ParqueaderosFunctions class.
+
+-  Crear un API Gateway.  
