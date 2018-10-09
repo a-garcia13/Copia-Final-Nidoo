@@ -11,3 +11,9 @@ En la [wiki](https://github.com/MISO-4206/201820-Repo-Grupo-06/wiki) del reposit
 - Gabriel Pinto - 201515275
 - Jair García - 201210425
 - José Álvarez - 201628933
+
+### Arquitecturas Ágiles - Grupo No. 6. Proyecto contruido a partir de la arquitectura propuesta por Serverless Architecture with Java 8, AWS Lambda, and Amazon DynamoDB 
+
+
+![Architecture](images/architecture.jpg)
+
