@@ -10,26 +10,26 @@ package com.amazonaws.serverless.pojo;
 public class Coordenada
 {
 
-    private Float coordenadaX;
+    private Double coordenadaX;
 
-    private Float coordenadaY;
+    private Double coordenadaY;
 
-    public Float getCoordenadaX()
+    public Double getCoordenadaX()
     {
         return coordenadaX;
     }
 
-    public void setCoordenadaX(Float coordenadaX)
+    public void setCoordenadaX(Double coordenadaX)
     {
         this.coordenadaX = coordenadaX;
     }
 
-    public Float getCoordenadaY()
+    public Double getCoordenadaY()
     {
         return coordenadaY;
     }
 
-    public void setCoordenadaY(Float coordenadaY)
+    public void setCoordenadaY(Double coordenadaY)
     {
         this.coordenadaY = coordenadaY;
     }

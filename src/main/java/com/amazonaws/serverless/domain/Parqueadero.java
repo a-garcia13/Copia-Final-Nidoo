@@ -16,10 +16,10 @@ public class Parqueadero implements Serializable
     private static final long serialVersionUID = -8243145429438016232L;
 
     @DynamoDBHashKey
-    private Float coordenadaX;
+    private Double coordenadaX;
 
     @DynamoDBRangeKey
-    private Float coordenadaY;
+    private Double coordenadaY;
 
     @DynamoDBAttribute
     private Integer cupos;
@@ -44,13 +44,13 @@ public class Parqueadero implements Serializable
 
     public Parqueadero() { }
 
-    public Parqueadero(Float coordenadaX, Float coordenadaY)
+    public Parqueadero(Double coordenadaX, Double coordenadaY)
     {
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
     }
 
-    public Parqueadero(Float coordenadaX, Float coordenadaY, Integer cupos, String descripcion, String direccion, String nombreLugar, Integer tarifa, Integer tipoParqueadero, Integer tipoTarifa)
+    public Parqueadero(Double coordenadaX, Double coordenadaY, Integer cupos, String descripcion, String direccion, String nombreLugar, Integer tarifa, Integer tipoParqueadero, Integer tipoTarifa)
     {
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
@@ -63,22 +63,22 @@ public class Parqueadero implements Serializable
         this.tipoTarifa = tipoTarifa;
     }
 
-    public Float getCoordenadaX()
+    public Double getCoordenadaX()
     {
         return coordenadaX;
     }
 
-    public void setCoordenadaX(Float coordenadaX)
+    public void setCoordenadaX(Double coordenadaX)
     {
         this.coordenadaX = coordenadaX;
     }
 
-    public Float getCoordenadaY()
+    public Double getCoordenadaY()
     {
         return coordenadaY;
     }
 
-    public void setCoordenadaY(Float coordenadaY)
+    public void setCoordenadaY(Double coordenadaY)
     {
         this.coordenadaY = coordenadaY;
     }

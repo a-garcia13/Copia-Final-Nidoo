@@ -9,11 +9,11 @@ import java.util.Optional;
 public interface ParqueaderoDao
 {
 
-    List<Parqueadero> findNearestPoints(Float coordenadaX, Float coordenadaY);
+    List<Parqueadero> findNearestPoints(Double coordenadaX, Double coordenadaY);
 
-    Optional<Parqueadero> findParqueaderoByKey(Float coordenadaX, Float coordenadaY);
+    Optional<Parqueadero> findParqueaderoByKey(Double coordenadaX, Double coordenadaY);
 
     void saveOrUpdateParqueadero(Parqueadero parqueadero);
 
-    void deleteParqueadero(Float coordenadaX, Float coordenadaY);
+    void deleteParqueadero(Double coordenadaX, Double coordenadaY);
 }

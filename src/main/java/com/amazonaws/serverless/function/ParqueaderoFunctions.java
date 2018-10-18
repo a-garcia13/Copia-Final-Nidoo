@@ -44,6 +44,11 @@ public class ParqueaderoFunctions
         log.info("Parqueadero eliminado satisfactoriamente");
     }
 
+    /**
+     * Get the nearest parking (< 2 Kms)
+     * @param coordenada user coordinates
+     * @return list of parking
+     */
     public List<Parqueadero> getNearestPoints(Coordenada coordenada)
     {
 
@@ -55,6 +60,7 @@ public class ParqueaderoFunctions
 
         log.info("Obtener los parqueaderos más cercanos a las coordenadas X = " + coordenada.getCoordenadaX() + " y coordenada Y: " + coordenada.getCoordenadaY());
         List<Parqueadero> parqueaderos = parqueaderoDao.findNearestPoints(coordenada.getCoordenadaX(), coordenada.getCoordenadaY());
+
         log.info("Encontrados " + parqueaderos.size() + " parqueaderos para coordenadas x = " + coordenada.getCoordenadaX() + " y coordenada Y: " + coordenada.getCoordenadaY());
 
         return parqueaderos;
@@ -83,4 +89,6 @@ public class ParqueaderoFunctions
             throw new IllegalArgumentException("Proceso de búsqueda no exitoso. No existe el parqueadero especificado.");
         }
     }
+
+
 }
