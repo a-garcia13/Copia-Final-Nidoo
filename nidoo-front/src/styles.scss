@@ -1,0 +1,24 @@
+$nidooColor: #733b89;
+html {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+.nidoo-font {
+  color: $nidooColor;
+}
+
+.bg-nidoo {
+  background-color: $nidooColor;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
