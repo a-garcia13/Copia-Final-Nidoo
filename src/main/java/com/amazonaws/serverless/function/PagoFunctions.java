@@ -16,7 +16,7 @@ public class PagoFunctions {
 
     private static final Logger log = Logger.getLogger(PagoFunctions.class);
     private final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
-    private final String queueUrl =  System.getenv("queueUrl");;
+    private final String queueUrl =  System.getenv("queueUrl");
 
 
     public void sendPago(Pago pago)
@@ -64,6 +64,6 @@ public class PagoFunctions {
         sendMessageRequest.withMessageAttributes(messageAttributes);
 
         sqs.sendMessage(sendMessageRequest);
-
+        log.info("Mensaje enviado a la cola SQS. Esperando procesamiento asincrónico");
     }
 }
