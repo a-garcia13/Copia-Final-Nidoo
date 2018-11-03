@@ -8,8 +8,6 @@ import com.amazonaws.services.lambda.runtime.events.SQSEvent;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent.MessageAttribute;
 import com.amazonaws.services.lambda.runtime.events.SQSEvent.SQSMessage;
 
-import org.apache.log4j.Logger;
-
 import java.util.Map;
 
 public class PaymentProcessFunctions implements RequestHandler<SQSEvent, Void>
