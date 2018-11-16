@@ -4,32 +4,32 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   constructor(
     private fB: FormBuilder,
     private router: Router,
     private authentication: AuthenticationService
   ) {
-    this.createLoginForm();
+    this.createRegisterForm();
   }
 
-  loginForm: FormGroup;
+  registerForm: FormGroup;
 
-  createLoginForm() {
-    this.loginForm = this.fB.group({
+  createRegisterForm() {
+    this.registerForm = this.fB.group({
       email: [''],
       password: ['']
     });
   }
 
-  onLoginSubmit() {
-    const email = this.loginForm.value.email;
-    const password = this.loginForm.value.password;
-    this.authentication.logIn(email, password);
+  onRegisterSubmit() {
+    const email = this.registerForm.value.email;
+    const password = this.registerForm.value.password;
+    this.authentication.register(email, password);
   }
 
   ngOnInit() {}

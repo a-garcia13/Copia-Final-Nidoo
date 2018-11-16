@@ -14,6 +14,7 @@ import { NewReservationComponent } from './components/new-reservation/new-reserv
 import { AppRoutingModule } from './app.routing';
 import { AuthenticationService } from './services/authentication/authentication.service';
 import { ParkingLotsService } from './services/parking-services/parking-lots.service';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ParkingLotsService } from './services/parking-services/parking-lots.ser
     NavbarComponent,
     ParkingLotsComponent,
     LoginComponent,
-    NewReservationComponent
+    NewReservationComponent,
+    RegisterComponent
   ],
   imports: [
     FormsModule,

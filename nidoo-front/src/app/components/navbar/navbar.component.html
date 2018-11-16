@@ -9,25 +9,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <li *ngIf="!loggedIn" class="nav-item">
           <a class="nav-link text-light" [routerLink]="['/iniciarSesion']">Iniciar sesión</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <li *ngIf="!loggedIn" class="nav-item">
+          <a class="nav-link text-light" [routerLink]="['/registro']">Registrarse</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+        <li *ngIf="loggedIn" class="nav-item">
+          <a class="nav-link text-light" href="#">Realizar reserva</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+        <li *ngIf="loggedIn" class="nav-item">
+          <a class="nav-link text-light pointer" (click)="logOut()">Cerrar sesión</a>
         </li>
       </ul>
     </div>

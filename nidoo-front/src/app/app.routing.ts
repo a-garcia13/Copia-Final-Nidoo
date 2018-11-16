@@ -6,6 +6,7 @@ import { NewReservationComponent } from './components/new-reservation/new-reserv
 import { AuthenticatedGuardService } from './services/guards/authenticated-guard.service';
 import { NotAuthenticatedGuardService } from './services/guards/not-authenticated-guard.service';
 import { AuthenticationService } from './services/authentication/authentication.service';
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
   {
@@ -14,13 +15,18 @@ const appRoutes: Routes = [
   },
   {
     path: 'iniciarSesion',
-    component: LoginComponent
-    // canActivate: [NotAuthenticatedGuardService]
+    component: LoginComponent,
+    canActivate: [NotAuthenticatedGuardService]
+  },
+  {
+    path: 'registro',
+    component: RegisterComponent,
+    canActivate: [NotAuthenticatedGuardService]
   },
   {
     path: 'realizarReserva',
-    component: NewReservationComponent
-    // canActivate: [AuthenticatedGuardService]
+    component: NewReservationComponent,
+    canActivate: [AuthenticatedGuardService]
   },
   { path: '**', redirectTo: '' }
 ];
