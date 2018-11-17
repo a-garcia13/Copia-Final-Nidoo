@@ -75,6 +75,36 @@ export class AuthenticationService {
     window.location.reload();
   }
 
+  getSession() {
+    const cognitoUser = userPool.getCurrentUser();
+
+    if (cognitoUser != null) {
+      cognitoUser.getSession((err, session) => {
+        if (err) {
+          this.logOut();
+          return null;
+        }
+      });
+    } else {
+      this.logOut();
+      return null;
+    }
+
+    return cognitoUser;
+  }
+
+  getUserAttributes(user) {
+    return new Promise((resolve, reject) => {
+      user.getUserAttributes((err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  }
+
   isAuthenticated() {
     return userPool.getCurrentUser() != null;
   }

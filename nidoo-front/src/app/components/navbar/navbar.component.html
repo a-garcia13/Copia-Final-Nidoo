@@ -16,9 +16,6 @@
           <a class="nav-link text-light" [routerLink]="['/registro']">Registrarse</a>
         </li>
         <li *ngIf="loggedIn" class="nav-item">
-          <a class="nav-link text-light" href="#">Realizar reserva</a>
-        </li>
-        <li *ngIf="loggedIn" class="nav-item">
           <a class="nav-link text-light pointer" (click)="logOut()">Cerrar sesión</a>
         </li>
       </ul>

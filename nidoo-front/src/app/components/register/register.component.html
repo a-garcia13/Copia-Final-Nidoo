@@ -2,31 +2,27 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-5 col-12 mx-auto mt-5 text-center">
-        <div class="card bg-nidoo border-0">
-          <div class="card-body">
-            <h3 class="text-white">Regístrate en Nidoo</h3>
-            <hr class="text-white bg-white" />
-            <form ngNativeValidate [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text bg-white"><i class="fas fa-envelope nidoo-font"></i></span>
-                </div>
-                <input id="email" class="form-control bg-white" formControlName="email" placeholder="Email" type="email"
-                  minlength="4" required>
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text bg-white"><i class="fas fa-lock nidoo-font"></i></span>
-                </div>
-                <input id="password" class="form-control" formControlName="password" placeholder="Contraseña" minlength="8"
-                  type="password" required>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-outline-light">Registrarse</button>
-              </div>
-            </form>
+        <h3 class="text-white">Regístrate en Nidoo</h3>
+        <hr class="text-white bg-white" />
+        <form ngNativeValidate [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white"><i class="fas fa-envelope nidoo-font"></i></span>
+            </div>
+            <input id="email" class="form-control bg-white" formControlName="email" placeholder="Email" type="email"
+              minlength="4" required>
           </div>
-        </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white"><i class="fas fa-lock nidoo-font"></i></span>
+            </div>
+            <input id="password" class="form-control" formControlName="password" placeholder="Contraseña" minlength="8"
+              type="password" required>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-outline-light">Registrarse</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
