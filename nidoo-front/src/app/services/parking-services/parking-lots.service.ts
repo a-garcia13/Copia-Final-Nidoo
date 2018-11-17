@@ -53,7 +53,7 @@ export class ParkingLotsService {
         reservation.user = idToken.payload.email;
         return this.http
           .post(
-            'https://sfz7itr5a1.execute-api.us-east-1.amazonaws.com/prod/parqueaderos',
+            'https://api.nidoo.tk/booking-process/parqueaderos',
             reservation,
             this.options
           )
