@@ -71,17 +71,25 @@ export class ParkingLotsComponent implements OnInit {
         this.authentication.getUserAttributes(user).then(data => {
           const reservation = {
             user: data[2].Value,
-            parking: this.selectedParking.nombreLugar,
-            hour: selectedHour,
-            minute: selectedMinutes
+            coordenadaX: this.selectedParking.coordenadaY,
+            coordenadaY: this.selectedParking.coordenadaX,
+            selectedHour: selectedHour,
+            selectedMinutes: selectedMinutes
           };
-          alert(
-            'La reserva ha sido realizada de forma exitosa a las ' +
-              selectedHour +
-              ':' +
-              selectedMinutes
-          );
-          document.getElementById('closeModal').click();
+
+          this.parkingLotsService
+            .makeAReservation(reservation)
+            .subscribe(res => {
+              if (res) {
+                alert(
+                  'La reserva ha sido realizada con exito a las ' +
+                    selectedHour +
+                    ':' +
+                    selectedMinutes
+                );
+                document.getElementById('closeModal').click();
+              }
+            });
         });
       }
     }
