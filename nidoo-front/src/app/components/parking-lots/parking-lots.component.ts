@@ -68,7 +68,6 @@ export class ParkingLotsComponent implements OnInit {
         return;
       } else {
         const user = this.authentication.getSession();
-        console.log(this.selectedParking);
         this.authentication.getUserAttributes(user).then(data => {
           const reservation = {
             user: data[2].Value,

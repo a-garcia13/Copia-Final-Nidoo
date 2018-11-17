@@ -22,7 +22,7 @@ export class ParkingLotsService {
     this.createHeaders();
     return this.http
       .post(
-        'https://9ns662sty8.execute-api.us-east-1.amazonaws.com/prod/parqueaderos',
+        'https://api.nidoo.tk/park-search/parqueaderos',
         coordinates,
         this.options
       )
