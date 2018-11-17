@@ -57,20 +57,19 @@ export class ParkingLotsComponent implements OnInit {
   reserveParking() {
     const selectedMinutes = this.time.minute;
     const selectedHour = this.time.hour;
-    if (selectedHour < this.hour) {
-      alert('La hora seleccionada no puede ser menor a la actual.');
-      return;
-    } else {
-      if (this.hour === selectedHour && selectedMinutes - 5 < this.minutes) {
-        alert(
-          'Se requieren al menos 5 minutos de anticipación para realizar una reserva.'
-        );
+    if (this.authentication.isAuthenticated()) {
+      if (selectedHour < this.hour) {
+        alert('La hora seleccionada no puede ser menor a la actual.');
         return;
       } else {
-        const user = this.authentication.getSession();
-        this.authentication.getUserAttributes(user).then(data => {
+        if (this.hour === selectedHour && selectedMinutes - 5 < this.minutes) {
+          alert(
+            'Se requieren al menos 5 minutos de anticipación para realizar una reserva.'
+          );
+          return;
+        } else {
           const reservation = {
-            user: data[2].Value,
+            user: '',
             coordenadaX: this.selectedParking.coordenadaY,
             coordenadaY: this.selectedParking.coordenadaX,
             selectedHour: selectedHour,
@@ -90,8 +89,11 @@ export class ParkingLotsComponent implements OnInit {
                 document.getElementById('closeModal').click();
               }
             });
-        });
+        }
       }
+    } else {
+      alert('Debes iniciar sesión');
+      window.location.reload();
     }
   }
 
