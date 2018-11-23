@@ -57,34 +57,43 @@ export class ParkingLotsComponent implements OnInit {
   reserveParking() {
     const selectedMinutes = this.time.minute;
     const selectedHour = this.time.hour;
-    if (selectedHour < this.hour) {
-      alert('La hora seleccionada no puede ser menor a la actual.');
-      return;
-    } else {
-      if (this.hour === selectedHour && selectedMinutes - 5 < this.minutes) {
-        alert(
-          'Se requieren al menos 5 minutos de anticipación para realizar una reserva.'
-        );
+    if (this.authentication.isAuthenticated()) {
+      if (selectedHour < this.hour) {
+        alert('La hora seleccionada no puede ser menor a la actual.');
         return;
       } else {
-        const user = this.authentication.getSession();
-        console.log(this.selectedParking);
-        this.authentication.getUserAttributes(user).then(data => {
-          const reservation = {
-            user: data[2].Value,
-            parking: this.selectedParking.nombreLugar,
-            hour: selectedHour,
-            minute: selectedMinutes
-          };
+        if (this.hour === selectedHour && selectedMinutes - 5 < this.minutes) {
           alert(
-            'La reserva ha sido realizada de forma exitosa a las ' +
-              selectedHour +
-              ':' +
-              selectedMinutes
+            'Se requieren al menos 5 minutos de anticipación para realizar una reserva.'
           );
-          document.getElementById('closeModal').click();
-        });
+          return;
+        } else {
+          const reservation = {
+            user: '',
+            coordenadaX: this.selectedParking.coordenadaY,
+            coordenadaY: this.selectedParking.coordenadaX,
+            selectedHour: selectedHour,
+            selectedMinutes: selectedMinutes
+          };
+
+          this.parkingLotsService
+            .makeAReservation(reservation)
+            .subscribe(res => {
+              if (res) {
+                alert(
+                  'La reserva ha sido realizada con exito a las ' +
+                    selectedHour +
+                    ':' +
+                    selectedMinutes
+                );
+                document.getElementById('closeModal').click();
+              }
+            });
+        }
       }
+    } else {
+      alert('Debes iniciar sesión');
+      window.location.reload();
     }
   }
 

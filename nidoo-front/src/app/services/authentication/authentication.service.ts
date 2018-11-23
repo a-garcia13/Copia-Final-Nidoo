@@ -64,6 +64,11 @@ export class AuthenticationService {
   }
 
   getAuthenticatedUser() {
+    const user = userPool.getCurrentUser();
+    if (user === null) {
+      alert('Debes iniciar sesión para continuar');
+      window.location.reload();
+    }
     return userPool.getCurrentUser();
   }
 
