@@ -10,7 +10,7 @@ public class ReservaFunctions {
     private static final Logger log = Logger.getLogger(ReservaFunctions.class);
     private static final DynamoDBReservaDao reservaDao = DynamoDBReservaDao.instance();
 
-    public void saveOrUpdateReserva(Reserva reserva)
+    public String saveOrUpdateReserva(Reserva reserva)
     {
 
         if (null == reserva)
@@ -20,7 +20,8 @@ public class ReservaFunctions {
         }
 
         log.info("Salvando o actualizando una reserva con coordenada x= " + reserva.getCoordenadaX() + " y coordenada Y  = " + reserva. getCoordenadaY());
-        reservaDao.saveOrUpdateReserva(reserva);
+        String uuid = reservaDao.saveOrUpdateReserva(reserva);
         log.info("Parqueadero salvado/actualizado satisfactoriamente");
+        return uuid;
     }
 }

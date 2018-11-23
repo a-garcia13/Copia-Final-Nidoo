@@ -43,9 +43,10 @@ public class DynamoDBReservaDao implements ReservaDao
 
 
     @Override
-    public void saveOrUpdateReserva(Reserva reserva)
+    public String saveOrUpdateReserva(Reserva reserva)
     {
         mapper.save(reserva);
+        return reserva.getUuid();
     }
 
     @Override

@@ -7,7 +7,7 @@ import java.util.Optional;
 public interface ReservaDao
 {
 
-    void saveOrUpdateReserva(Reserva reserva);
+    String saveOrUpdateReserva(Reserva reserva);
 
     void deleteReserva(String uuid);
 
